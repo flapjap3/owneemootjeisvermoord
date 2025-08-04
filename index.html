@@ -3,31 +3,57 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Mijn Snelle Pagina</title>
+  <title>Het Brie Mysterie</title>
+  <link href="https://fonts.googleapis.com/css2?family=Creepster&display=swap" rel="stylesheet">
   <style>
     body {
-      font-family: sans-serif;
-      background: #f2f2f2;
       margin: 0;
-      padding: 2rem;
+      padding: 0;
+      background: radial-gradient(#111, #000);
+      color: #fff;
+      font-family: 'Creepster', cursive;
+      text-align: center;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      background-image: url('https://images.unsplash.com/photo-1600294037681-c80b4cb5d1b0?ixlib=rb-4.0.3&auto=format&fit=crop&w=1950&q=80');
+      background-size: cover;
+      background-position: center;
     }
-    .container {
-      max-width: 600px;
-      margin: auto;
-      background: white;
-      padding: 2rem;
+    .overlay {
+      background: rgba(0, 0, 0, 0.7);
+      padding: 3rem;
       border-radius: 10px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      margin: 2rem;
+      box-shadow: 0 0 20px red;
     }
     h1 {
-      color: #333;
+      font-size: 4rem;
+      color: #ff0000;
+      margin-bottom: 1rem;
+    }
+    p {
+      font-size: 1.8rem;
+      max-width: 600px;
+      margin: 0 auto;
+      line-height: 1.5;
+    }
+    .brie {
+      font-style: italic;
+      color: #f0e68c;
     }
   </style>
 </head>
 <body>
-  <div class="container">
-    <h1>Welkom!</h1>
-    <p>Dit is een supersnelle single webpage, zonder gedoe.</p>
+  <div class="overlay">
+    <h1>De Dood van Mootje</h1>
+    <p>Op een donkere avond, ergens in een klein dorpje...</p>
+    <p>...is <strong>Mootje</strong> gestorven op mysterieuze wijze.</p>
+    <p>Niet door vergif. Niet door een mes.</p>
+    <p>Maar door iets veel gevaarlijkers...</p>
+    <p class="brie">...een stuk brie.</p>
+    <p>Ze stikte. Niemand kon haar redden. De geur was te sterk. De textuur te glad.<br><br>Rust zacht, Mootje 🕯️</p>
   </div>
 </body>
 </html>
