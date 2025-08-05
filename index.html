@@ -1,59 +1,192 @@
 <!DOCTYPE html>
 <html lang="nl">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Het Brie Mysterie</title>
-  <link href="https://fonts.googleapis.com/css2?family=Creepster&display=swap" rel="stylesheet">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Het Brie Mysterie — De Dood van Mootje</title>
+  <link href="https://fonts.googleapis.com/css2?family=Creepster&family=Montserrat:wght@300;600&display=swap" rel="stylesheet">
   <style>
-    body {
-      margin: 0;
-      padding: 0;
-      background: radial-gradient(#111, #000);
-      color: #fff;
-      font-family: 'Creepster', cursive;
-      text-align: center;
-      height: 100vh;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
+    :root{
+      --accent:#ff2e2e;
+      --muted:#dcd0b4;
+      --panel-bg: rgba(0,0,0,0.65);
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%;margin:0;font-family:Montserrat,system-ui,Segoe UI,Roboto,"Helvetica Neue",Arial}
+    body{
+      background: linear-gradient(180deg,#0b0b0b 0%, #1a1a1a 60%);
+      color:#fff;
+      display:flex;
+      flex-direction:column;
+      min-height:100vh;
+      align-items:center;
+      justify-content:flex-start;
+      padding:3rem 1rem;
       background-image: url('https://images.unsplash.com/photo-1600294037681-c80b4cb5d1b0?ixlib=rb-4.0.3&auto=format&fit=crop&w=1950&q=80');
-      background-size: cover;
-      background-position: center;
+      background-size:cover;
+      background-position:center;
     }
+
     .overlay {
-      background: rgba(0, 0, 0, 0.7);
-      padding: 3rem;
-      border-radius: 10px;
-      margin: 2rem;
-      box-shadow: 0 0 20px red;
+      width:100%;
+      max-width:900px;
+      background:var(--panel-bg);
+      padding:2.25rem;
+      border-radius:12px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.6), 0 0 40px rgba(255,0,0,0.04) inset;
+      backdrop-filter: blur(4px);
+      margin-bottom:1.5rem;
     }
-    h1 {
-      font-size: 4rem;
-      color: #ff0000;
-      margin-bottom: 1rem;
+
+    h1{
+      font-family:'Creepster', cursive;
+      color:var(--accent);
+      font-size:3.25rem;
+      margin:0 0 0.25rem 0;
+      text-shadow: 0 4px 18px rgba(0,0,0,0.9);
     }
-    p {
-      font-size: 1.8rem;
-      max-width: 600px;
-      margin: 0 auto;
-      line-height: 1.5;
+    .subtitle{
+      color:#f3efe0;
+      margin:0 0 1rem 0;
+      font-size:1.05rem;
+      opacity:0.95;
     }
-    .brie {
-      font-style: italic;
-      color: #f0e68c;
+
+    .story{
+      font-size:1.1rem;
+      line-height:1.6;
+      color:#eee;
+      max-width:70ch;
+      margin:0 auto 0.25rem auto;
+    }
+
+    .brie{
+      color:var(--muted);
+      font-style:italic;
+      font-weight:600;
+    }
+
+    /* Form segment */
+    .accuse-section{
+      margin-top:2rem;
+      padding-top:1rem;
+      border-top:1px solid rgba(255,255,255,0.06);
+      display:flex;
+      gap:1rem;
+      align-items:center;
+      justify-content:center;
+      flex-wrap:wrap;
+    }
+
+    label{display:block;font-size:0.95rem;color:#f7f4ee;margin-bottom:0.35rem}
+    input[type="text"]{
+      padding:0.6rem 0.8rem;
+      border-radius:8px;
+      border:1px solid rgba(255,255,255,0.08);
+      background:rgba(255,255,255,0.03);
+      color:#fff;
+      min-width:220px;
+      outline:none;
+      transition:box-shadow .15s, transform .08s;
+    }
+    input[type="text"]:focus{box-shadow:0 6px 18px rgba(0,0,0,0.6); transform:translateY(-1px)}
+
+    .btn{
+      padding:0.6rem 1rem;
+      border-radius:8px;
+      border:0;
+      cursor:pointer;
+      font-weight:600;
+      letter-spacing:0.3px;
+      background:linear-gradient(180deg,var(--accent),#c82323);
+      color:white;
+      box-shadow:0 8px 24px rgba(255,46,46,0.12);
+    }
+
+    .disclaimer{
+      font-size:0.85rem;
+      color:#f0d6d6;
+      margin-top:0.75rem;
+      opacity:0.9;
+    }
+
+    footer{
+      margin-top:auto;
+      color:#e6e6e6;
+      opacity:0.7;
+      font-size:0.85rem;
+      padding:1rem 0 0 0;
+    }
+
+    @media (max-width:520px){
+      h1{font-size:2.25rem}
+      .overlay{padding:1.25rem}
+      .story{font-size:1rem}
     }
   </style>
 </head>
 <body>
-  <div class="overlay">
-    <h1>De Dood van Mootje</h1>
-    <p>Op een donkere avond, ergens in een klein dorpje...</p>
-    <p>...is <strong>Mootje</strong> gestorven op mysterieuze wijze.</p>
-    <p>Niet door vergif. Niet door een mes.</p>
-    <p>Maar door iets veel gevaarlijkers...</p>
-    <p class="brie">...een stuk brie.</p>
-    <p>Ze stikte. Niemand kon haar redden. De geur was te sterk. De textuur te glad.<br><br>Rust zacht, Mootje 🕯️</p>
+  <div class="overlay" role="main" aria-labelledby="title">
+    <h1 id="title">De Dood van Mootje</h1>
+    <p class="subtitle">Een kort, donker mysterie</p>
+
+    <div class="story">
+      <p>Op een kille avond in het dorp werd Mootje dood aangetroffen. Niet het soort dood dat je verwacht — geen gescheurde kleren, geen bloedsporen — enkel een stille, onaangename geur en een stuk kaas op de vloer.</p>
+
+      <p>Niet vergif. Niet een mes. De omstanders zeiden het zachtjes: <span class="brie">ze stikte in een stuk brie</span>. De vraag die rest: <strong>wie deed dit?</strong></p>
+    </div>
+
+    <!-- Accuse / Guess section -->
+    <div class="accuse-section" aria-label="Wie heeft het gedaan?">
+      <div>
+        <label for="accuser">Wie heeft deze moord gepleegd?</label>
+        <input id="accuser" type="text" placeholder="Typ hier een naam..." autocomplete="off" />
+      </div>
+      <div style="display:flex;flex-direction:column;gap:0.5rem;align-items:flex-start;">
+        <button id="submitBtn" class="btn" type="button">Beantwoord de vraag</button>
+        <div class="disclaimer" role="note">
+          Let op: dit is fictief verhaal. Verspreid geen echte beschuldigingen van misdaden over echte mensen.
+        </div>
+      </div>
+    </div>
   </div>
+
+  <footer>© Het Brie Mysterie — Een fictief verhaal</footer>
+
+  <script>
+    (function(){
+      const input = document.getElementById('accuser');
+      const btn = document.getElementById('submitBtn');
+
+      function sanitize(s){
+        return (s||'').toString().trim().toLowerCase();
+      }
+
+      btn.addEventListener('click', function(){
+        const guess = sanitize(input.value);
+        if (!guess){
+          alert('Vul alsjeblieft een naam in voordat je verder gaat.');
+          input.focus();
+          return;
+        }
+
+        // juiste antwoord: "jessica" (case-insensitive)
+        if (guess === 'jessica'){
+          // ga naar success pagina
+          window.location.href = 'success.html';
+        } else {
+          // ga naar failure pagina
+          window.location.href = 'failure.html';
+        }
+      });
+
+      // Enter key submit
+      input.addEventListener('keydown', function(e){
+        if (e.key === 'Enter') {
+          btn.click();
+        }
+      });
+    })();
+  </script>
 </body>
 </html>
