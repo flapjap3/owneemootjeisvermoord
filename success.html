@@ -6,19 +6,114 @@
   <title>Opgelost — Het Brie Mysterie</title>
   <link href="https://fonts.googleapis.com/css2?family=Creepster&family=Montserrat:wght@300;600&display=swap" rel="stylesheet">
   <style>
-    body{margin:0;height:100vh;display:flex;align-items:center;justify-content:center;background:#0b0b0b;color:#fff;font-family:Montserrat,system-ui}
-    .card{background:linear-gradient(180deg, rgba(255,255,255,0.03), rgba(0,0,0,0.35));padding:2rem;border-radius:12px;text-align:center;max-width:760px;box-shadow:0 20px 50px rgba(0,0,0,0.6)}
-    h1{font-family:'Creepster',cursive;color:#9ef96a;margin:0 0 0.25rem 0}
-    p{margin:0.5rem 0 0 0;color:#eaeaea;font-size:1.05rem}
-    .back{margin-top:1.25rem;display:inline-block;padding:0.5rem 0.9rem;border-radius:8px;background:#ffffff0f;color:#fff;text-decoration:none;border:1px solid rgba(255,255,255,0.05)}
+    body {
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: radial-gradient(circle at center, #0b2b0b 0%, #0b0b0b 80%);
+      color: #fff;
+      font-family: Montserrat, system-ui;
+      overflow: hidden;
+    }
+
+    /* Confetti animation */
+    .confetti {
+      position: fixed;
+      width: 10px;
+      height: 10px;
+      background-color: gold;
+      animation: fall 4s linear infinite;
+      top: -10px;
+    }
+
+    @keyframes fall {
+      0% { transform: translateY(-10px) rotate(0deg); }
+      100% { transform: translateY(110vh) rotate(720deg); }
+    }
+
+    /* Card styling */
+    .card {
+      background: rgba(0, 40, 0, 0.75);
+      padding: 2.5rem;
+      border-radius: 15px;
+      text-align: center;
+      max-width: 760px;
+      box-shadow: 0 20px 50px rgba(0, 255, 100, 0.3);
+      backdrop-filter: blur(4px);
+      animation: fadeIn 1.2s ease-out forwards;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    h1 {
+      font-family: 'Creepster', cursive;
+      color: #a6ff8c;
+      margin: 0 0 0.5rem 0;
+      font-size: 2.8rem;
+      text-shadow:
+        0 0 5px #0f0,
+        0 0 15px #2aff80,
+        0 0 30px #2aff80;
+      animation: glowPulse 2s infinite alternate;
+    }
+
+    @keyframes glowPulse {
+      0% { text-shadow: 0 0 5px #0f0, 0 0 15px #2aff80, 0 0 30px #2aff80; }
+      100% { text-shadow: 0 0 10px #0f0, 0 0 25px #2aff80, 0 0 50px #2aff80; }
+    }
+
+    p {
+      margin: 0.8rem 0;
+      color: #e4ffe4;
+      font-size: 1.05rem;
+      line-height: 1.5;
+    }
+
+    .back {
+      margin-top: 1.5rem;
+      display: inline-block;
+      padding: 0.6rem 1rem;
+      border-radius: 8px;
+      background: linear-gradient(180deg, #4dff4d, #009900);
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      transition: background 0.3s ease, transform 0.2s ease;
+      box-shadow: 0 5px 15px rgba(0,255,0,0.3);
+    }
+
+    .back:hover {
+      background: linear-gradient(180deg, #66ff66, #00b300);
+      transform: translateY(-2px);
+    }
   </style>
 </head>
 <body>
+
+  <!-- Confetti elements -->
+  <script>
+    for (let i = 0; i < 50; i++) {
+      const confetto = document.createElement('div');
+      confetto.classList.add('confetti');
+      confetto.style.left = Math.random() * 100 + 'vw';
+      confetto.style.backgroundColor = ['#FFD700', '#FF4500', '#00FF7F', '#1E90FF'][Math.floor(Math.random() * 4)];
+      confetto.style.animationDuration = (Math.random() * 3 + 2) + 's';
+      confetto.style.transform = 'rotate(' + (Math.random() * 360) + 'deg)';
+      document.body.appendChild(confetto);
+    }
+  </script>
+
   <div class="card" role="main">
     <h1>Gefeliciteerd — Jullie hebben het mysterie opgelost!</h1>
     <p>Jullie intuïtie was juist: Jessica is ontmaskerd als degene die verantwoordelijk was voor het stuk brie dat tot Mootje's dood leidde.</p>
     <p>Goed gedaan, rechercheurs. 🕯️🧀</p>
     <a class="back" href="index.html">Terug naar het dossier</a>
   </div>
+
 </body>
 </html>
